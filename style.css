@@ -1,0 +1,358 @@
+:root{
+    --dark: rgba(0, 0, 0, 0.9);
+    --darkpink: #363062;
+    --niceshadow: rgba(92, 92, 92, 0.4);
+    --betterwhite: rgba(255, 255, 255, 0.8);
+    --alizarin: #e74c3c;
+    --wisteria: #8e44ad;
+    --river: #3498db;
+    --emerald: #2ecc71;
+    --sunflower: #f1c40f;
+    --betterpurple: #150050;
+}
+@keyframes rotation{
+    0%   {transform: rotate(45deg);}
+    100% {transform: rotate(405deg);}
+}
+@keyframes rotation-reverse{
+    0%   {transform: rotate(-45deg);}
+    100% {transform: rotate(-405deg);}
+}
+@keyframes move{
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--dark);
+    font-size: 10px;
+}
+nav{
+    width: 100%;
+    height: auto;
+    background-color: var(--darkpink);
+    box-shadow: var(--niceshadow) 0px 2px 1px, var(--niceshadow) 0px 4px 2px, var(--niceshadow) 0px 8px 4px, var(--niceshadow) 0px 16px 8px, var(--niceshadow) 0px 32px 16px;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#navin{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+#logo1{
+    transform: rotate(45deg);
+    animation: rotation 3s linear infinite;
+    animation-delay: 0s;
+}
+#logo2{
+    transform: rotate(-45deg);
+    animation: rotation-reverse 3s linear infinite;
+    animation-delay: 0s;
+}
+#name{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    align-content: center;
+    font-size: 6rem;
+    font-family: cursive;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px var(--betterwhite);
+}
+#main{
+    width: 100%;
+    height: 816px;
+    background-image: url(tlo.png);
+    background-size: 400px;
+    animation: move 60s linear 0s infinite;
+    margin-top: -50px;
+}
+#opacityback{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.4fr 0.5fr;
+}
+.rotating-text {
+    z-index: 0;
+    grid-row: 2/3;
+    font-weight: bolder;
+    font-size: 10rem;
+    color: white;
+    margin: auto;
+}
+.rotating-text .word {
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    top: 350px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.rotating-text .word.in {
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+.rotating-text .word.out {
+    opacity: 0;
+    transform: rotateX(90deg);
+}
+.rotating-text .word.behind {
+    opacity: 0;
+    transform: rotateX(-90deg);
+}
+.alizarin span{
+    color: var(--alizarin);
+}
+  
+.wisteria span{
+    color: var(--wisteria);
+}
+  
+.river span{
+    color: var(--river);
+}
+  
+.emerald span{
+    color: var(--emerald);
+}
+  
+.sun-flower span{
+    color: var(--sunflower);
+}
+#opinia{
+    grid-row: 3/4;
+    align-content: center;
+    padding: 100px;
+    font-size: 3rem;
+    color: var(--betterwhite);
+    margin-left: 400px;
+    margin-right: 200px;
+}
+#before-content{
+    width: 100%;
+    height: 10px;
+    border-top: 10px solid var(--betterwhite);
+    border-top-left-radius: 35%;
+    border-top-right-radius: 35%;
+}
+#content{
+    margin-top: -10px;
+    width: auto;
+    height: auto;
+    background-color: var(--betterpurple);
+    color: var(--betterwhite);
+    font-size: 1.8rem;
+    padding: 100px;
+    padding-left: 200px;
+}
+#content-title{
+    font-size: 7rem;
+    color: var(--river);
+    -webkit-text-stroke: 2px var(--betterwhite);
+}
+hr{
+    border: 2px solid var(--river);
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: 0;
+}
+footer{
+    height: 10rem;
+    width: 100%;
+    background-color: var(--dark);
+    text-align: center;
+    align-content: center;
+    color: var(--betterwhite);
+    font-size: 4rem;
+}
+@media screen and (max-width:2493px) {
+    .rotating-text{
+        font-size: 8rem;
+    }
+    #opinia{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width:2194px) {
+    .rotating-text{
+        font-size: 7rem;
+    }
+    #opinia{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 1652px) {
+    #main, #opacityback{
+        height: 850px;
+    }
+    #opacityback{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.4fr 0.5fr;
+    }
+    #opinia{
+        margin-left: 200px;
+    }
+    #opinia > div{
+        margin-bottom: -100px;
+    }
+}
+@media screen and (max-width:1459px) {
+    .rotating-text{
+        font-size: 7rem;
+    }
+    #opinia{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 1320px) {
+    .rotating-text .word{
+        top: 25rem;
+    }
+}
+@media screen and (max-width: 1189px) {
+    #opinia{
+        font-size: 2.5rem;
+    }
+    #content{
+        padding: 10rem;
+    }
+}
+@media screen and (max-width:1044px) {
+    .rotating-text .word{
+        top: 22rem;
+        left: 10rem;
+        right: 10rem;
+    }
+    #opinia{
+        font-size: 2.5rem;
+        margin-left: 7rem;
+        margin-right: 10rem;
+    }
+}
+@media screen and (max-width:754px) {
+    .rotating-text{
+        font-size: 6rem;
+    }
+    #content-title{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width:686px) {
+    .rotating-text{
+        font-size: 5rem;
+    }
+    #opinia{
+        font-size: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    #name{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width:548px) {
+    .rotating-text{
+        font-size: 5rem;
+    }
+    #opinia{
+        font-size: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    #content{
+        padding: 2rem;
+    }
+    #name{
+        font-size: 3rem;
+    }
+    #logo1{
+        transform: scale(0.8);
+    }
+    #logo2{
+        transform: scale(0.8);
+    }
+}
+@media screen and (max-width:475px) {
+    #opinia{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .rotating-text .word{
+        top: 20rem;
+        left: 5rem;
+        right: 5rem;
+    }
+    .rotating-text{
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width:467px) {
+    #logo1{
+        width: 8rem;
+        height: 8rem;
+    }
+    #logo2{
+        width: 8rem;
+        height: 8rem;
+    }
+}
+@media screen and (max-width:422px) {
+    html, body{
+        font-size: 9px;
+    }
+    #opinia{
+        padding-top: 0px;
+    }
+    #logo1{
+        width: 6rem;
+        height: 6rem;
+    }
+    #logo2{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+@media screen and (max-width:375px) {
+    html, body{
+        font-size: 8px;
+    }
+}
+@media screen and (max-width:305px) {
+    html, body{
+        font-size: 6px;
+    }
+}
+@media screen and (max-width:213px) {
+    html, body{
+        font-size: 4px;
+    }
+}
+@media screen and (max-width:155px) {
+    html, body{
+        font-size: 2px;
+    }
+}
+@media screen and (max-width:85px) {
+    html, body{
+        font-size: 1px;
+    }
+}
